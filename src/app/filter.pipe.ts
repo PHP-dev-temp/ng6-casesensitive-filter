@@ -14,7 +14,7 @@ export class FilterPipe implements PipeTransform {
     if ( value.length === 0 || filterString === '' ) {
       return value;
     }
-    if(filterCaseSensitive){
+    if(!filterCaseSensitive){
       for ( const item of value) {
         item['name'] = item['name'].replace(/<\/?b[^>]*>/g, '');
         item['about'] = item['about'].replace(/<\/?b[^>]*>/g, '');
